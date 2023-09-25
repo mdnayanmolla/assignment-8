@@ -29,7 +29,7 @@ const myCeareRoute = createBrowserRouter([
         {
             path:'/donation/:id',
             element:<Donation></Donation>,
-            loader:()=> fetch('./allData.json')
+            loader:()=> fetch('../allData.json')
         }
     ]
    }

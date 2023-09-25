@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 // import DonationCard from './DonationCard';
-import { Link } from 'react-router-dom';
-
+import { Link } from 'react-router-dom'
 
 const DonationAll = ({ donation }) => {
     const { id, image, title, category, text_color, card_bg_color, btn_bg_color } = donation || {};
@@ -17,6 +16,6 @@ const DonationAll = ({ donation }) => {
 };
 
 DonationAll.propTypes = {
-    donation: PropTypes.array
+    donation: PropTypes.object.isRequired
 }
 export default DonationAll;
