@@ -11,7 +11,7 @@ const Home = () => {
         .then(data=> setDonationCate(data))
       },[])
     return (
-        <div className="">
+        <div className=" pb-36">
             <Banner></Banner>
             <div className="mt-10 ">
                 <h2 className="text-2xl font-bold text-center">Donation Categories</h2>

@@ -6,7 +6,7 @@ const Navbar = () => {
         <div className=" px-[7%] py-5 shadow-sm ">
             <div className="flex items-center justify-between space-x-6">
                 <div className=""> 
-                  <img src={Logo} alt="donation"/>
+                  <img className=" h-14" src={Logo} alt="donation"/>
                 </div>
                 <div>
                     <ul className="flex space-x-4 md:space-x-7">

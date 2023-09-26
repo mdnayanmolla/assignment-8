@@ -6,7 +6,7 @@ import Swal from 'sweetalert2'
 import PropTypes from 'prop-types';
 
 const DonationsList = ({ donationList }) => {
-    const { id, image } = donationList || {}
+    const { id, image, title, text_color, price,description } = donationList || {}
 
     const handleAddDonation = () => {
         const addedDonationArray = [];
@@ -37,9 +37,19 @@ const DonationsList = ({ donationList }) => {
         }
     }
     return (
-        <div>
-            <img src={image} alt="" />
-            <button onClick={handleAddDonation}>add donations</button>
+        <div className='px-[7%] my-16'>
+            <div>
+                <div className='relative'>
+                    <img className=' w-full' src={image} alt="" />
+                    <div className='absolute bg-black bg-opacity-70 left-0 bottom-0 w-full '>
+                       <button onClick={handleAddDonation} style={{backgroundColor:text_color}} className='mx-16 my-8 px-8 py-3 text-white'>Donate { price }</button>
+                    </div>
+                </div>  
+                <div className='mt-8'>
+                   <h2 className='text-black font-black text-3xl mb-3'>{title}</h2>
+                   <p>{description}</p>
+                </div>            
+            </div>
         </div>
     );
 };
