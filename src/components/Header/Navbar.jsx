@@ -3,14 +3,13 @@ import Logo from '../../assets/Logo.png'
 
 const Navbar = () => {
     return (
-        <div className=" px-[7%] py-5 shadow-sm">
-            <div className="flex items-center justify-between">
-                <div className="">
-                    
-                  <img src={Logo}/>
+        <div className=" px-[7%] py-5 shadow-sm ">
+            <div className="flex items-center justify-between space-x-6">
+                <div className=""> 
+                  <img src={Logo} alt="donation"/>
                 </div>
                 <div>
-                    <ul className="flex space-x-7">
+                    <ul className="flex space-x-4 md:space-x-7">
                         <li className="font-semibold">
                         <NavLink to="/"className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""} >
                                 Home
