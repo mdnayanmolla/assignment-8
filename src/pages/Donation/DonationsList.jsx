@@ -25,6 +25,12 @@ const DonationsList = ({ donationList }) => {
             if (!isExits) {
                 addedDonationArray.push(...donationItems, donationList)
                 localStorage.setItem('donation', JSON.stringify(addedDonationArray))
+                Swal.fire({
+                    title: 'Yur Donation is Successfully Done!',
+                    text: 'Do you want to continue',
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                })
             } else {
                 Swal.fire({
                     title: 'This Category Donation is Complated!',

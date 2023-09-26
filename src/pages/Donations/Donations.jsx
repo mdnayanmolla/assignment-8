@@ -16,7 +16,7 @@ const Donations = () => {
     return (
         <div className="px-[7%] my-16">
             {noFound?<p className="h-[80vh] flex items-center justify-center">{noFound}</p>:
-            <div className="grid lg:grid-cols-2 gap-5">
+            <div className="grid lg:grid-cols-2 gap-6">
                  {
                     donationsData.map(data=> <DonationsData key={data.id} data={data}></DonationsData>)
                 }

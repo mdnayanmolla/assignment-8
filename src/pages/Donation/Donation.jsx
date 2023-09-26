@@ -16,6 +16,8 @@ const Donation = () => {
         setData(findData)
     }, [id, donations])
 
+
+
     return (
         <div>
             <DonationsList donationList = {data}></DonationsList>
