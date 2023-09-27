@@ -16,7 +16,7 @@ const Donations = () => {
     },[])
     return (
         <div className="px-[7%] my-16">
-            {noFound?<p className="h-[80vh] flex items-center justify-center">{noFound}</p>:
+            { noFound?<p className="h-[80vh] flex items-center justify-center">{noFound}</p>:
             <div className="grid lg:grid-cols-2 gap-6">
                  {
                     showall? donationsData.map(data=> <DonationsData key={data.id} data={data}></DonationsData>)
@@ -26,7 +26,7 @@ const Donations = () => {
              </div>
              }
             {
-                !showall? <div className="text-center mt-4">
+                !showall? <div className={donationsData.length > 4 ? "block text-center mt-4" :"hidden"}>
                 <button onClick={()=> setShowAll(!showall)} className='px-4 py-2 bg-[#FF444A] text-white'> Show All</button>
             </div>:" "
             }

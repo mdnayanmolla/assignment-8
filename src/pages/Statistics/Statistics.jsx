@@ -9,9 +9,10 @@ ChartJS.register(
 
 const Statistics = () => {
     const [totalDonation, setTotalDonation] = useState([])
+    const [noFound,setNoFound] = useState('')
 
     useEffect(() => {
-        fetch('./allData.json')
+        fetch('../allData.json')
             .then(res => res.json())
             .then(data => setTotalDonation(data))
     }, [])
@@ -21,6 +22,13 @@ const Statistics = () => {
     useEffect(() => {
         const donationItems = JSON.parse(localStorage.getItem('donation'));
         setDonataionData(donationItems)
+  
+
+        if(donationItems){
+            setDonataionData(donationItems)
+           }else{
+            setNoFound('No Data Found')
+           }
     }, [])
 
     // console.log(donationsData.length)
@@ -44,12 +52,17 @@ const Statistics = () => {
 
     return (
         <div >
-            <div className="flex items-center justify-center h-[100vh]">
-                <div className='w-[50%] h-[50%] flex justify-center'>
-                    <Pie data={data} />
-                </div>
-            </div>
+             { noFound? <p className="h-[80vh] flex items-center justify-center">{noFound}</p>:
 
+        //   <p>{donationsData.length}</p>
+        <div className="flex items-center justify-center h-[100vh]">
+                
+        <div className='w-[50%] h-[50%] flex justify-center'>
+            <Pie data={data} />
+        </div>
+    </div>
+          
+}
         </div>
     );
 };
