@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 const DonationsData = ({data}) => {
     const {id,image, title, category, text_color, card_bg_color, btn_bg_color,price} = data
     return (
-        <div className='flex space-x-4 rounded-md gap-5' style={{backgroundColor:card_bg_color}}>
+        <div>
+            <div className='flex space-x-4 rounded-md gap-5' style={{backgroundColor:card_bg_color}}>
             <div className='w-[40%]'>
                <img className='w-full h-[100%]' src={image} alt=''/>
             </div>
@@ -17,6 +18,8 @@ const DonationsData = ({data}) => {
                </Link>
             </div>
         </div>
+        </div>
+     
     );
 };
 DonationsData.propTypes = {
